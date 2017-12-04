@@ -41,9 +41,9 @@ Author: 1986 Wayne A. Christopher, U. C. Berkeley CAD Group
 
 static char *getsubject();
 static toplink *getsubtoplink();
-extern void sortlist(), tlfree();
-extern int sortcmp();
-
+static void tlfree();
+static int sortcmp();
+static void sortlist(toplink **tlp);
 static topic *alltopics = NULL;
 
 static fplace *copy_fplace();

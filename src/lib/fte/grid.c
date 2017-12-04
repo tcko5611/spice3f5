@@ -26,8 +26,13 @@ static void drawsmithgrid( );
 static void arcset();
 static double cliparc();
 static void adddeglabel(), addradlabel();
-
 typedef enum { x_axis, y_axis } Axis;
+static void drawloggrid(GRAPH *graph, char *units, int hmt, int lmt,
+			int decsp, int subs, int pp, Axis axis);
+static
+drawlingrid(GRAPH *graph, char *units, int spacing, int nsp, double dst,
+	    double lmt, double hmt, bool onedec,int mult, double mag,
+	    int digits, Axis axis);
 
 /* note: scaleunits is static and never changed in this file
     ie, can get rid of it */

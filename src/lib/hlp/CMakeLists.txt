@@ -1,0 +1,2 @@
+add_library(hlp help.c  provide.c  readhelp.c  textdisp.c  x11disp.c  xdisplay.c)
+

@@ -306,7 +306,7 @@ cx_deriv(data, type, length, newlength, newtype, pl, newpl, grouping)
 
 		/* real */
 		for (j = 0; j < n; j++)
-		    spare[j] = c_indata[j + i + base].cx_real;
+		    spare[j] = c_indata[j + i + base].x;
 		if (!ft_polyfit(scale + i + base - degree,
 		    spare, r_coefs, degree, scratch))
 		{
@@ -317,13 +317,13 @@ cx_deriv(data, type, length, newlength, newtype, pl, newpl, grouping)
 		/* for loop gets the beginning part */
 		for (j = k; j <= i + degree / 2; j++) {
 		    x = scale[j + base];
-		    c_outdata[j + base].cx_real =
+		    c_outdata[j + base].x =
 			ft_peval(x, r_coefs, degree - 1);
 		}
 
 		/* imag */
 		for (j = 0; j < n; j++)
-		    spare[j] = c_indata[j + i + base].cx_imag;
+		    spare[j] = c_indata[j + i + base].y;
 		if (!ft_polyfit(scale + i - degree + base,
 		    spare, i_coefs, degree, scratch))
 		{
@@ -334,7 +334,7 @@ cx_deriv(data, type, length, newlength, newtype, pl, newpl, grouping)
 		/* for loop gets the beginning part */
 		for (j = k; j <= i - degree / 2; j++) {
 		    x = scale[j + base];
-		    c_outdata[j + base].cx_imag =
+		    c_outdata[j + base].y =
 			ft_peval(x, i_coefs, degree - 1);
 		}
 		k = j;
@@ -344,9 +344,9 @@ cx_deriv(data, type, length, newlength, newtype, pl, newpl, grouping)
 	    for (j = k; j < length; j++) {
 		x = scale[j + base];
 		/* real */
-		c_outdata[j + base].cx_real = ft_peval(x, r_coefs, degree - 1);
+		c_outdata[j + base].x = ft_peval(x, r_coefs, degree - 1);
 		/* imag */
-		c_outdata[j + base].cx_imag = ft_peval(x, i_coefs, degree - 1);
+		c_outdata[j + base].y = ft_peval(x, i_coefs, degree - 1);
 	    }
 	}
 

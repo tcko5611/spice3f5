@@ -46,6 +46,9 @@ static char pointchars[128];
 /* Buffer for ticmarks if given a list */
 static char ticbuf[1024];
 static char *ticlist = ticbuf;
+static gr_resize_internal(GRAPH *graph);
+static
+drawlegend(GRAPH *graph, int plotno, struct dvec *dv);
 #define MAXTICS 100
 double *readtics();
 

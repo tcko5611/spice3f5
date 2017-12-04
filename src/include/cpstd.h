@@ -31,16 +31,18 @@ struct wordlist {
 typedef struct wordlist wordlist;
 
 /* Complex numbers. */
-
+#ifndef _COMPLEX_DEFINED
+#define _COMPLEX_DEFINED
 struct _complex {   /* IBM portability... */
-    double cx_real;
-    double cx_imag;
+    double x;
+    double y;
 } ;
+#endif
 
 typedef struct _complex complex;
 
-#define realpart(cval)  ((struct _complex *) (cval))->cx_real
-#define imagpart(cval)  ((struct _complex *) (cval))->cx_imag
+#define realpart(cval)  ((struct _complex *) (cval))->x
+#define imagpart(cval)  ((struct _complex *) (cval))->y
 
 /* Externs defined in std.c */
 

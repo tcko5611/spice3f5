@@ -206,7 +206,7 @@ ft_cpinit()
 		s++;
 	    for (r = buf; *s && !isspace(*s); r++, s++)
 		*r = *s;
-	    (void) strcpy(r, DIR_PATHSEP);
+	    (void) strcpy(r, "/");
 	    (void) strcat(r, "spinit");
 	    if (fp = fopen(buf, "r")) {
 		cp_interactive = false;

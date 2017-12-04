@@ -35,9 +35,9 @@ Author: 1985 Wayne A. Christopher
 #include <sys/timeb.h>
 #endif
 
-#ifdef HAS_STAT
+// #ifdef HAS_STAT
 #include <sys/stat.h>
-#endif
+// #endif
 
 #ifdef HAS_BSDTTY
 #include <sgtty.h>

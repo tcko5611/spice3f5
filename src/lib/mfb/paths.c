@@ -22,6 +22,7 @@ Copyright 1990 Regents of the University of California.  All rights reserved.
  * is forbidden.
  */
 
+#define vms
 #include "spice.h"
 #include <stdio.h>
 #ifndef vms

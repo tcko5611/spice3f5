@@ -580,11 +580,11 @@ raw_read(name)
 				    fprintf(cp_err,
 					    "Error: bad rawfile\n");
 			    } else {
-				if (fread((char *) &v->v_compdata[i].cx_real,
+				if (fread((char *) &v->v_compdata[i].x,
 					sizeof (double), 1, fp) != 1)
 				    fprintf(cp_err,
 					"Error: bad rawfile\n");
-				if (fread((char *) &v->v_compdata[i].cx_imag,
+				if (fread((char *) &v->v_compdata[i].y,
 					sizeof (double), 1, fp) != 1)
 				    fprintf(cp_err,
 					    "Error: bad rawfile\n");

@@ -817,8 +817,8 @@ plotAddRealValue(desc, value)
       /* a real parading as a VF_COMPLEX */
       v->v_compdata = (complex *) trealloc((char *) v->v_compdata,
             sizeof (complex) * (v->v_length + 1));
-      v->v_compdata[v->v_length].cx_real = value;
-      v->v_compdata[v->v_length].cx_imag = (double) 0;
+      v->v_compdata[v->v_length].x = value;
+      v->v_compdata[v->v_length].y = (double) 0;
     }
     v->v_length++;
 
@@ -834,8 +834,8 @@ plotAddComplexValue(desc, value)
 
     v->v_compdata = (complex *) trealloc((char *) v->v_compdata,
             sizeof (complex) * (v->v_length + 1));
-    v->v_compdata[v->v_length].cx_real = value.real;
-    v->v_compdata[v->v_length].cx_imag = value.imag;
+    v->v_compdata[v->v_length].x = value.real;
+    v->v_compdata[v->v_length].y = value.imag;
     v->v_length++;
 
     return;
